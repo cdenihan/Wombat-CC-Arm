@@ -22,7 +22,7 @@ pub fn build(b: *std.Build) void {
     lib.addIncludePath(kipr_include);
     lib.addCSourceFiles(.{
         .root = b.path("src"),
-        .files = &.{ "LibraryTemplate.cpp" },
+        .files = &.{ "Arm.cpp" },
         .flags = &.{ "-std=c++17", "-Wall", "-Wextra" },
     });
 

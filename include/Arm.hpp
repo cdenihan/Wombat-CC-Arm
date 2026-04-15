@@ -31,13 +31,18 @@ private:
     /// Servo port for the claw/gripper.
     const int ClawServoPort;
 
+    /// Enables debug logging when true.
+    bool DebugEnabled;
+
     /**
      * @brief Sets a servo to a specific position.
      * @param port Servo port to command.
      * @param position Target position value (units depend on servo
      * implementation). Intended for internal use.
      */
-    void SetServoPosition(int port, int position);
+    void MoveServoToPosition(int port, int position);
+    void DebugLog(const char *message) const;
+    void DebugLogServoMove(int port, int from_position, int to_position) const;
 
 public:
     /**
@@ -78,7 +83,13 @@ public:
      * @param position Target joint positions.
      * Multithreaded function that calls the SetServoPosition three times.
      */
-    void SetPosition(ArmPosition position);
+    void SetPosition(const ArmPosition &position);
+
+    /// Enables or disables Arm debug output.
+    void SetDebugEnabled(bool enabled);
+
+    /// Returns current Arm debug state.
+    bool IsDebugEnabled() const;
 
     /**
      * @brief Constructs an Arm using the provided servo ports.

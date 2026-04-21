@@ -5,7 +5,7 @@
 #include <iostream>
 #include <thread>
 #include <kipr/wombat.h>
-#include "../include/Arm.hpp"
+#include "../include/Wombat-CC/Arm.hpp"
 
 // THREADED FUNCTION
 void Arm::SetServoPosition(int port, int position)

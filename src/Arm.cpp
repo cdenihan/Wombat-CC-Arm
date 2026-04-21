@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include <string_view>
 #include <kipr/wombat.h>
-#include "../include/Arm.hpp"
+#include "../include/Wombat-CC/Arm.hpp"
 
 namespace
 {
